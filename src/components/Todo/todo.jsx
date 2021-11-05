@@ -1,11 +1,11 @@
 import React from 'react'
 import classes from './todo.css'
 
-export default function todo(){
+export default function todo({title}){
 
     return(
         <>
-            <li>ola</li>
+            <li>{title}</li>
         </>
     )
 }
