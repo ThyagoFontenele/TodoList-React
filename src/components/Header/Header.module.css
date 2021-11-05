@@ -1,0 +1,30 @@
+body{
+    background-color: #f5f5f5;
+}
+p{
+    text-align: center;
+    font-style: normal;
+    font-size: 1rem;
+    padding-top: 1.5%;
+}
+b{
+    font-weight: normal;
+}
+header{
+    background-color: #6a5acd;
+    color: white;
+    padding: 0 30px 30px 30px;
+}
+.section{
+    display: flex;
+    margin-top: 3%;
+    
+    justify-content: space-between;
+    align-items: center;
+}
+.todo{
+    font-size: 1.8rem;
+}
+.tarefas{
+    font-size: 1.4rem;
+}
