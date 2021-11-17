@@ -1,0 +1,19 @@
+.container{
+    width: 100%;
+    display: none;
+    text-align: center;
+}
+.container, label{
+    font-size: 130%;
+}
+.container, img{
+    text-align: center;
+}
+
+
+.check{
+   padding: 20px;
+}
+.check:checked{
+    background-color: red;
+}

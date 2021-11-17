@@ -38,8 +38,8 @@ export default function PageHome() {
                 
                 <form className={classes.form}>
                     <br />
-                    <input type="text" id="input" placeholder="Adicionar novo todo..." onChange={ e => { setNome(e.target.value) }}/>
-                    <button onClick={(e) => {e.preventDefault(); AdicionarTarefa(data) }}> + </button>
+                    <input className={classes.input} type="text" id="input" placeholder="Adicionar novo todo..." onChange={ e => { setNome(e.target.value) }}/>
+                    <button className={classes.button} onClick={(e) => {e.preventDefault(); AdicionarTarefa(data) }}> + </button>
                 </form>
 
                 <div className={classes.tarefas}>
