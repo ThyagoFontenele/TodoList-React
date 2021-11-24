@@ -1,7 +1,7 @@
 import React from 'react'
 import './todo.css'
 
-import Lixeira from '../../assets/icons/trash/trash.png'
+import Lixeira from '../../assets/icons/trash/trash@2x.png'
 export default function todo({title}){
     
     return(
@@ -13,7 +13,6 @@ export default function todo({title}){
                     <span class='text'>{title}</span>
                 </label>
                 <img src={Lixeira} alt="ExcluirTask" class='trash'/>
-                
 
             </li>
         </>
