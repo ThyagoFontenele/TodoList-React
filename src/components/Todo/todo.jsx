@@ -12,7 +12,7 @@ export default function todo({title}){
                     <input type="checkbox" name="checkbox" class='checkbox' content="d"/>
                     <span class='text'>{title}</span>
                 </label>
-                <img src={Lixeira} alt="ExcluirTask" class='trash'/>
+                <img src={Lixeira} alt="ExcluirTask" class='trash' onClick={() => { console.log('Hello')}}/>
 
             </li>
         </>

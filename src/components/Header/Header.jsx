@@ -11,7 +11,7 @@ export default function Header({count}) {
                 <p>Created by Thyago Fontenele</p>
                 
                 <div className={classes.section}>
-                    <h1 className={classes.todo}>to.do.list</h1>
+                    <h1 className={classes.todo}>To do</h1>
                     <h2 className={classes.tarefas}><b>Você tem </b>{count} {wordTarefa}</h2>
 
                 </div>
