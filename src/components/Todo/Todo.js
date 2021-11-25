@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Todo.css'
+import classes from './Todo.module.css'
 
 import Lixeira from '../../assets/icons/trash/trash@2x.png'
 
