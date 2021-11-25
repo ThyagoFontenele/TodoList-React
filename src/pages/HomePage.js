@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Header from '../components/Header/Header'
 import classes from './HomePage.module.css'
-import Todo from '../components/Todo/Todo.jsx'
+import Todo from '../components/Todo/Todo.js'
 
 
 export default function HomePage() {
