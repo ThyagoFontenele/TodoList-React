@@ -37,7 +37,7 @@ export default function PageHome() {
         console.log(newArray);
 
         setComponent([...newArray])
-        setCount(count-1)
+        setCount(count-1);
     }
    
     return (
