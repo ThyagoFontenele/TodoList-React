@@ -6,8 +6,9 @@ import Lixeira from '../../assets/icons/trash/trash@2x.png'
 export default function Todo({title, array, removerTarefa}){
 
     const [slowStyle, setSlowStyle] = useState();
+
     const estilo = {
-        transition: 'all 600ms',
+        transition: 'all 200ms',
         opacity: 0
     }
     return(
@@ -19,14 +20,24 @@ export default function Todo({title, array, removerTarefa}){
                     <span class='text'>{title}</span>
                 </label>
                 <img src={Lixeira} alt="ExcluirTask" class='trash' onClick={ () => { 
-                    let index = array.indexOf(title);
+
+                    const index = array.indexOf(title);
+                    const checkboxs = document.querySelectorAll('.checkbox');
+
+                    for (let i = index; i < checkboxs.length; i++) { // Esse for é para não ter problema com checked
+                        if(checkboxs[i+1] !== undefined) {
+                            if(checkboxs[i+1].checked === true){ 
+                                checkboxs[i].checked = true;
+                            }else{
+                                checkboxs[i].checked = false;
+                            }
+                        }
+                    }
                     setSlowStyle(estilo);
-                    let test = document.querySelectorAll('.checkbox');
-                    test[index].checked = false;
                     setTimeout(function() {
                         removerTarefa(index ,array)
                         setSlowStyle();
-                    }, 500);
+                    }, 100);
                 }}/>
 
             </li>

@@ -14,14 +14,11 @@ export default function HomePage() {
     const data = {
         nome: nomeTask,
     }
-
-    function increment() { setCount(count+1) }
-
     
     function adicionarTarefa(data){
         
         if(data.nome){
-            increment();
+            setCount(count+1);
             const input = document.getElementById('input');
             input.value = '';
             setNome('');
@@ -31,7 +28,7 @@ export default function HomePage() {
 
     function removerTarefa(index, array){
         let newArray = array;
-        
+        newArray[index] = '';
         newArray.splice(index, 1);
 
         setComponent([...newArray])
