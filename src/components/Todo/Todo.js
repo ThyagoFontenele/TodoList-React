@@ -13,13 +13,13 @@ export default function Todo({title, array, removerTarefa}){
     }
     return(
         <>
-            <li class='container' style={slowStyle}>
+            <li className={classes.container} style={slowStyle}>
 
-                <label class='switch'>
-                    <input type="checkbox" name="checkbox" class='checkbox'/>
-                    <span class='text'>{title}</span>
+                <label className={classes.switch}>
+                    <input type="checkbox" name="checkbox" className={classes.checkbox}/>
+                    <span className={classes.text}>{title}</span>
                 </label>
-                <img src={Lixeira} alt="ExcluirTask" class='trash' onClick={ () => { 
+                <img src={Lixeira} alt="ExcluirTask" className={classes.trash} onClick={ () => { 
 
                     const index = array.indexOf(title);
                     const checkboxs = document.querySelectorAll('.checkbox');
