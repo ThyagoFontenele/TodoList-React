@@ -8,7 +8,7 @@ export default function Todo({title, array, removerTarefa}){
     const [slowStyle, setSlowStyle] = useState();
 
     const estilo = {
-        transition: 'all 200ms',
+        transition: 'all 300ms',
         opacity: 0
     }
     return(
@@ -37,7 +37,7 @@ export default function Todo({title, array, removerTarefa}){
                     setTimeout(function() {
                         removerTarefa(index ,array)
                         setSlowStyle();
-                    }, 100);
+                    }, 300);
                 }}/>
 
             </li>
