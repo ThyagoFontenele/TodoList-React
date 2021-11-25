@@ -20,6 +20,7 @@
     padding-right: 100px;
     width: 130px;
     align-items: center;
+    font-weight: 500;
 }
 .container:first-child{
     margin-top: 2rem;
@@ -53,15 +54,16 @@
     border-right: 3px solid;
     border-bottom:  3px solid;
     transform: rotate(45deg);
-    color: rgb(81, 235, 81);
+    color: rgb(11, 187, 11);
     top: 1px;
 }
 .checkbox:checked:before{
     opacity: 1;
+    transition: all 300ms ease-in-out; ;
 }
 .checkbox:checked + span {
-    color: rgb(26, 224, 85);
-    transition: 700ms ;
+    color: rgb(11, 187, 11);
+    transition: all 700ms ease-in-out; ;
     text-decoration: line-through;
 }
 .checkbox:focus{

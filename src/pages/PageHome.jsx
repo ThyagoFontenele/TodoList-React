@@ -18,7 +18,7 @@ export default function PageHome() {
     function increment() { setCount(count+1) }
 
     
-    function AdicionarTarefa(data){
+    function adicionarTarefa(data){
         
         if(data.nome){
             increment();
@@ -28,7 +28,14 @@ export default function PageHome() {
             setComponent([...todoComponent, nomeTask])
         }
     }
-    
+
+    function removerTarefa(index, array){
+        console.log(array)
+        let newArray = array;
+        newArray.splice(index, 1)
+        console.log(newArray)
+        setComponent([...newArray])
+    }
    
     return (
         <>
@@ -38,19 +45,21 @@ export default function PageHome() {
                 
                 <form className={classes.form}>
                     <br />
-                    <input className={classes.input} type="text" id="input" placeholder="Adicionar novo todo..." onChange={ e => { setNome(e.target.value) }}/>
-                    <button className={classes.button} onClick={(e) => {e.preventDefault(); AdicionarTarefa(data) }}> + </button>
+                    <input className={classes.input} type="text" id="input" placeholder="Adicionar nova tarefa..." onChange={ e => { setNome(e.target.value) }}/>
+                    <button className={classes.button} onClick={(e) => {e.preventDefault(); adicionarTarefa(data) }}> + </button>
                 </form>
 
                 <div className={classes.tarefas}>
 
                     <ul>
                         {todoComponent.map(element => (
-                            <Todo title={element}/>
+                            <Todo title={element} array={todoComponent} removerTarefa={removerTarefa} />
                         ))}
                     </ul>
+                    
                 </div>
             </div>
         </>
     )
+    
 }
