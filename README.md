@@ -1,7 +1,6 @@
 # To do List - Lista de afazeres
 
 Versão: 1.0
-Projeto: Em construção
 Link Deploy: Em breve
 
 Esse projeto foi feito por mim Thyago e está responsivo.
