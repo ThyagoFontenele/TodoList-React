@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Header from '../components/Header/Header'
-import classes from './PageHome.module.css'
-import Todo from '../components/Todo/todo'
+import classes from './HomePage.module.css'
+import Todo from '../components/Todo/Todo'
 
 
-export default function PageHome() {
+export default function HomePage() {
 
     const [count, setCount ] = useState(0);
 
@@ -31,10 +31,8 @@ export default function PageHome() {
 
     function removerTarefa(index, array){
         let newArray = array;
-
+        
         newArray.splice(index, 1);
-
-        console.log(newArray);
 
         setComponent([...newArray])
         setCount(count-1);

@@ -62,8 +62,9 @@
 }
 .checkbox:checked + span {
     color: rgb(11, 187, 11);
-    transition: all 700ms ease-in-out; ;
     text-decoration: line-through;
+    transition: all 400ms ease-in-out; ;
+    
 }
 .checkbox:focus{
     box-shadow: 0 0 5px #000;
