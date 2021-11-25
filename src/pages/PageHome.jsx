@@ -30,11 +30,14 @@ export default function PageHome() {
     }
 
     function removerTarefa(index, array){
-        console.log(array)
         let newArray = array;
-        newArray.splice(index, 1)
-        console.log(newArray)
+
+        newArray.splice(index, 1);
+
+        console.log(newArray);
+
         setComponent([...newArray])
+        setCount(count-1)
     }
    
     return (
