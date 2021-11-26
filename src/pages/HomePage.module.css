@@ -1,13 +1,11 @@
 body{
-    background-color: #ecebeb;
+    background-color: #e9e7e7;
 }
 .input {
-    position: absolute;
+    position: relative;
     left: 50%;
-    top: 16%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-30%);
     border: none;
-    margin-bottom: 2%;
     font-size: 1rem;
     color: rgb(121, 121, 121);
     border-radius: 3px;
@@ -15,10 +13,9 @@ body{
     height: 24px;
 }
 .button {
-    position: absolute;
-    left: 49.4%;
-    top: 16%;
-    transform: translate(230%,-50%);
+    position: relative;
+    left: 50%;
+    transform: translate(-240%,-17%);
     cursor: pointer;
     border: none;
     border-radius: 0px 3px 3px 0px;
@@ -26,7 +23,7 @@ body{
     background-color: #ffff;
     font-size: 1.6rem;
     height: 40px;
-    border-left: 1px solid;
+    border-left: 0.3px solid;
     color: rgb(172, 172, 172);
 }
 .button:hover{
