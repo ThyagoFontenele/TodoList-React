@@ -3,7 +3,7 @@ import classes from './Todo.module.css'
 
 import Lixeira from '../../assets/icons/trash/trash@2x.png'
 
-export default function Todo({title, array, removeCount}){
+export default function Todo({title, removeCount}){
 
     const [slowStyle, setSlowStyle] = useState();
 
@@ -20,8 +20,6 @@ export default function Todo({title, array, removeCount}){
                     <span className={classes.text}>{title}</span>
                 </label>
                 <img src={Lixeira} alt="ExcluirTask" className={classes.trash} onClick={ () => { 
-
-                    const index = array.indexOf(title);
                     setSlowStyle(estilo);
                     removeCount();
                 }}/>

@@ -47,7 +47,7 @@ export default function HomePage() {
 
                     <ul>
                         {todoComponent.map(element => (
-                            <Todo title={element} array={todoComponent} removeCount={removeCount} />
+                            <Todo title={element} removeCount={removeCount} />
                         ))}
                     </ul>
                     
