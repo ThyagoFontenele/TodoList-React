@@ -4,18 +4,19 @@ body{
 .input {
     position: relative;
     left: 50%;
-    transform: translate(-50%,-110%);
+    transform: translate(-50%,-30%);
     border: none;
     font-size: 1rem;
     color: rgb(121, 121, 121);
     border-radius: 3px;
     padding: 8px 8px;
     height: 24px;
+    width: 240px;
 }
 .button {
     position: relative;
     left: 50%;
-    transform: translate(-240%,-97.5%);
+    transform: translate(-285%,-17.5%);
     cursor: pointer;
     border: none;
     border-radius: 0px 3px 3px 0px;
