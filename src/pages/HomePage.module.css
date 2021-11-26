@@ -4,7 +4,7 @@ body{
 .input {
     position: relative;
     left: 50%;
-    transform: translate(-50%,-30%);
+    transform: translate(-50%,-110%);
     border: none;
     font-size: 1rem;
     color: rgb(121, 121, 121);
@@ -15,7 +15,7 @@ body{
 .button {
     position: relative;
     left: 50%;
-    transform: translate(-240%,-17%);
+    transform: translate(-240%,-97.5%);
     cursor: pointer;
     border: none;
     border-radius: 0px 3px 3px 0px;
