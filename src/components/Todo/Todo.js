@@ -3,13 +3,13 @@ import classes from './Todo.module.css'
 
 import Lixeira from '../../assets/icons/trash/trash@2x.png'
 
-export default function Todo({title, array, removerTarefa}){
+export default function Todo({title, array, removeCount}){
 
     const [slowStyle, setSlowStyle] = useState();
 
     const estilo = {
-        transition: 'all 300ms',
-        opacity: 0
+        opacity: 0,
+        display: 'none'
     }
     return(
         <>
@@ -22,22 +22,8 @@ export default function Todo({title, array, removerTarefa}){
                 <img src={Lixeira} alt="ExcluirTask" className={classes.trash} onClick={ () => { 
 
                     const index = array.indexOf(title);
-                    const checkboxs = document.querySelectorAll('.checkbox');
-
-                    for (let i = index; i < checkboxs.length; i++) { // Esse for é para não ter problema com checked
-                        if(checkboxs[i+1] !== undefined) {
-                            if(checkboxs[i+1].checked === true){ 
-                                checkboxs[i].checked = true;
-                            }else{
-                                checkboxs[i].checked = false;
-                            }
-                        }
-                    }
                     setSlowStyle(estilo);
-                    setTimeout(function() {
-                        removerTarefa(index ,array)
-                        setSlowStyle();
-                    }, 300);
+                    removeCount();
                 }}/>
 
             </li>

@@ -15,6 +15,9 @@ export default function HomePage() {
         nome: nomeTask,
     }
     
+    function removeCount(){
+        setCount(count-1);
+    }
     function adicionarTarefa(data){
         
         if(data.nome){
@@ -26,14 +29,7 @@ export default function HomePage() {
         }
     }
 
-    function removerTarefa(index, array){
-        let newArray = array;
-        newArray[index] = '';
-        newArray.splice(index, 1);
-
-        setComponent([...newArray])
-        setCount(count-1);
-    }
+    
    
     return (
         <>
@@ -51,7 +47,7 @@ export default function HomePage() {
 
                     <ul>
                         {todoComponent.map(element => (
-                            <Todo title={element} array={todoComponent} removerTarefa={removerTarefa} />
+                            <Todo title={element} array={todoComponent} removeCount={removeCount} />
                         ))}
                     </ul>
                     
