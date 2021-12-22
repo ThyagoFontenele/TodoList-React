@@ -4,7 +4,7 @@ Versão: 1.0
 Link Deploy: Em breve
 
 Esse projeto foi feito por mim Thyago e está responsivo.
-
+Link Deploy : https://todo-list-react-seven.vercel.app/
 Como usar: 
 1- Adicione o nome da sua tarefa no input.
 2- Clique no botão '+' para adicionar essa tarefa.
