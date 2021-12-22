@@ -35,10 +35,10 @@ export default function HomePage() {
         <>
 
             <div className={classes.container}>
+                
                 <Header count={count}/>
                 
                 <form className={classes.form}>
-                    <br />
                     <input className={classes.input} type="text" id="input" placeholder="Adicionar nova tarefa..." onChange={ e => { setNome(e.target.value) }}/>
                     <button className={classes.button} onClick={(e) => {e.preventDefault(); adicionarTarefa(data) }}> + </button>
                 </form>
@@ -46,8 +46,8 @@ export default function HomePage() {
                 <div className={classes.tarefas}>
 
                     <ul>
-                        {todoComponent.map(element => (
-                            <Todo title={element} removeCount={removeCount} />
+                        {todoComponent.map((element, key) => (
+                            <Todo key={key} title={element} removeCount={removeCount} />
                         ))}
                     </ul>
                     
