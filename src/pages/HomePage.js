@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 
 import classes from './HomePage.module.css'
 import Todo from '../components/Todo/Todo.js'

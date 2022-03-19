@@ -5,7 +5,7 @@ const GlobalContext = createContext();
 function GlobalContextProvider({children}){
     const [countTask, setCountTask] = useState(Number(localStorage.getItem("countTask")) || 0);
     const [todoList, setTodoList ] = useState(JSON.parse(localStorage.getItem("listTask")) ? JSON.parse(localStorage.getItem("listTask")) : []);
-    const [countId, setCountId] = useState(Number(localStorage.getItem("countId")));
+    const [countId, setCountId] = useState(Number(localStorage.getItem("countId")) || 1);
     // formato: {
     //     id: number
     //     name: string,
@@ -17,7 +17,7 @@ function GlobalContextProvider({children}){
         localStorage.setItem("listTask", JSON.stringify(todoList));
         localStorage.setItem("countId", countId);
         localStorage.setItem("countTask", countTask);
-    }, [countId, todoList])
+    }, [countId, todoList, countTask])
 
     //Ativando ou desativando o checkbox
     function toggleIsActive(id){
@@ -35,6 +35,7 @@ function GlobalContextProvider({children}){
         const index = todoList.indexOf(element)
         todoList.splice(index, 1);
         setTodoList(todoList);
+        localStorage.setItem("listTask", JSON.stringify(todoList));
     }
     return(
         <GlobalContext.Provider 
