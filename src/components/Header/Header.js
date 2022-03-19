@@ -1,9 +1,13 @@
 import React from "react";
 import classes from './Header.module.css'
 
-export default function Header({count}) {
+import { GlobalContext } from "../../context/GlobalContext";
+import { useContext } from 'react';
 
-    const wordTarefa = count === 1 ? 'tarefa' : 'tarefas';
+export default function Header() {
+
+    const {countTask} = useContext(GlobalContext);
+    const wordTarefa = countTask === 1 ? 'tarefa' : 'tarefas';
     
     return (
         <>
@@ -11,7 +15,7 @@ export default function Header({count}) {
             <header>
                 
                 <h1 className={classes.todo}>To.do</h1>
-                <h2 className={classes.tarefas}><b>Você tem </b>{count} {wordTarefa}</h2>
+                <h2 className={classes.tarefas}><b>Você tem </b>{countTask} {wordTarefa}</h2>
                 
             </header>
         </>

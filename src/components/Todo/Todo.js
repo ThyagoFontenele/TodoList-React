@@ -1,30 +1,32 @@
-import React, { useState } from 'react'
-import classes from './Todo.module.css'
+import React, { useContext } from 'react'
 
-import Lixeira from '../../assets/icons/trash/trash@2x.png'
+import Lixeira from '../../assets/icons/trash/trash@2x.png';
+import { GlobalContext} from '../../context/GlobalContext';
+import { Checkbox, Container } from './styles';
 
-export default function Todo({title, removeCount}){
 
-    const [slowStyle, setSlowStyle] = useState();
+export default function Todo({element}){
 
-    const estilo = {
-        opacity: 0,
-        display: 'none'
-    }
+    const {deleteTask, setCountTask, toggleIsActive } = useContext(GlobalContext);
+
     return(
-        <>
-            <li className={classes.container} style={slowStyle}>
-
-                <label className={classes.switch}>
-                    <input type="checkbox" name="checkbox" className={classes.checkbox}/>
-                    <span className={classes.text}>{title}</span>
-                </label>
-                <img src={Lixeira} alt="ExcluirTask" className={classes.trash} onClick={ () => { 
-                    setSlowStyle(estilo);
-                    removeCount();
-                }}/>
-
-            </li>
-        </>
+            <Container active={element.isActive}>
+                <div>
+                    <Checkbox
+                        type="checkbox" 
+                        defaultChecked={false}
+                        active={element.isActive}
+                        onClick={() => {
+                            toggleIsActive(element.id);
+                        }}
+                    />
+                    <div className="nameContainer"><span title={element.name}>{element.name}</span></div>
+                    
+                    <img src={Lixeira} alt="ExcluirTask" onClick={ () => { 
+                        setCountTask(state => state-1);
+                        deleteTask(element.id);
+                    }}/>
+                </div>
+            </Container>
     )
 }

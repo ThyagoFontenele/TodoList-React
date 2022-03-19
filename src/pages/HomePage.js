@@ -1,53 +1,47 @@
-import React, { useState } from 'react'
-import Header from '../components/Header/Header'
+import React, { useState, useContext, useEffect } from 'react'
+
 import classes from './HomePage.module.css'
 import Todo from '../components/Todo/Todo.js'
 
+import { GlobalContext } from '../context/GlobalContext';
+
 
 export default function HomePage() {
-
-    const [count, setCount ] = useState(0);
-
     const [nomeTask, setNome ] = useState('');
-    const [todoComponent, setComponent ] = useState([])
 
-    const data = {
-        nome: nomeTask,
-    }
+    const {setCountTask, todoList, setTodoList, countId, setCountId} = useContext(GlobalContext);
     
-    function removeCount(){
-        setCount(count-1);
-    }
-    function adicionarTarefa(data){
-        
-        if(data.nome){
-            setCount(count+1);
-            const input = document.getElementById('input');
-            input.value = '';
+  
+    function adicionarTarefa(e){
+        e.preventDefault();
+        if(nomeTask.length > 2){
+            setCountId(state => state + 1);
+            setCountTask(state => state + 1);
+            setTodoList([...todoList, 
+                { 
+                    id: countId,
+                    name: nomeTask,
+                    isActive: false
+                }
+            ]);
             setNome('');
-            setComponent([...todoComponent, nomeTask])
         }
     }
-
-    
-   
     return (
         <>
 
             <div className={classes.container}>
                 
-                <Header count={count}/>
-                
                 <form className={classes.form}>
-                    <input className={classes.input} type="text" id="input" placeholder="Adicionar nova tarefa..." onChange={ e => { setNome(e.target.value) }}/>
-                    <button className={classes.button} onClick={(e) => {e.preventDefault(); adicionarTarefa(data) }}> + </button>
+                    <input className={classes.input} value={nomeTask} type="text" placeholder="Adicionar nova tarefa..." onChange={ e => { setNome(e.target.value) }}/>
+                    <button className={classes.button} onClick={(e) => adicionarTarefa(e) }> + </button>
                 </form>
 
                 <div className={classes.tarefas}>
 
                     <ul>
-                        {todoComponent.map((element, key) => (
-                            <Todo key={key} title={element} removeCount={removeCount} />
+                        {todoList.map((element, key) => (
+                            <Todo key={key} element={element} />
                         ))}
                     </ul>
                     
