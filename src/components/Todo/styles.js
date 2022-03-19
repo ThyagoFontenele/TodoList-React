@@ -26,6 +26,7 @@ export const Container = styled.li`
         
         .nameContainer{
             width: 300px;
+            padding: 5px 0px;
             span {
                 font-size: 20px;
                 color: ${props => props.active ? "rgb(11, 187, 11)" : ''};
