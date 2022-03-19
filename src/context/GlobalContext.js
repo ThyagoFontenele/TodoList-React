@@ -17,7 +17,7 @@ function GlobalContextProvider({children}){
         localStorage.setItem("listTask", JSON.stringify(todoList));
         localStorage.setItem("countId", countId);
         localStorage.setItem("countTask", countTask);
-    }, [countId])
+    }, [countId, todoList])
 
     //Ativando ou desativando o checkbox
     function toggleIsActive(id){
